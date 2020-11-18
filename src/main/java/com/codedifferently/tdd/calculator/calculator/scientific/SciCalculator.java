@@ -6,8 +6,9 @@ public class SciCalculator extends BasicCalculatorImp {
 
     public SciCalculator(){
         super();
-        /**
-         * Add your constructor code here
-         */
     }
+
+    /**
+     * Add your constructor code here
+     */
 }
