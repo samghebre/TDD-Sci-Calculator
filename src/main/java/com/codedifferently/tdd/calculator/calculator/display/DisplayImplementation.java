@@ -19,6 +19,11 @@ public class DisplayImplementation implements Display{
 
     @Override
     public String getCurrentDisplayMode() {
+
         return null;
     }
 }
+
+
+
+
