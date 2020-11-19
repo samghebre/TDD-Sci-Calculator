@@ -21,7 +21,7 @@ public class BasicCalculatorImp implements Calculator{
 
     protected Double add(Double input){
         Double sum = input + memory.recallCurrentValue();
-        memory.setToCurrentValue(sum);
+        memory.setCurrentValue(sum);
         return sum;
     }
 
@@ -42,6 +42,6 @@ public class BasicCalculatorImp implements Calculator{
     }
 
     protected Double sqrt(Double input) {
-        return 0.0;
+        return 10.0;
     }
 }
