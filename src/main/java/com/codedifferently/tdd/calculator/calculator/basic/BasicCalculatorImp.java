@@ -3,7 +3,6 @@ package com.codedifferently.tdd.calculator.calculator.basic;
 import com.codedifferently.tdd.calculator.calculator.memory.Memory;
 import com.codedifferently.tdd.calculator.calculator.memory.MemoryImplementation;
 
-import static com.codedifferently.tdd.calculator.utils.CustomConsole.*;
 
 public class BasicCalculatorImp implements Calculator{
     protected Memory memory;
@@ -26,22 +25,28 @@ public class BasicCalculatorImp implements Calculator{
     }
 
     protected Double subtract(Double input){
-        return 0.0;
+        Double sub = memory.recallCurrentValue() - input;
+        memory.setCurrentValue(sub);
+        return sub;
     }
 
     protected Double multiply(Double input){
-        return 0.0;
+        Double mul = input * memory.recallCurrentValue();
+        memory.setCurrentValue(mul);
+        return mul;
     }
 
     protected Double divide(Double input){
-        return 0.0;
+        Double div = memory.recallCurrentValue() / input;
+        memory.setCurrentValue(div);
+        return div;
     }
 
     protected Double sq(Double input){
-        return 0.0;
+        return Math.pow(input, 2);
     }
 
     protected Double sqrt(Double input) {
-        return 10.0;
+        return Math.sqrt(input);
     }
 }

@@ -5,6 +5,7 @@ import org.junit.Assert;
 
 public class BasicCalculatorImpTest {
 
+    @Test
     public void testAdd(){
         //Given
         BasicCalculatorImp basicCalculatorImp = new BasicCalculatorImp();
@@ -12,6 +13,8 @@ public class BasicCalculatorImpTest {
         //When
         Double expected = 8.0;
         Double actual = basicCalculatorImp.add(3.0);
+
+        //Then
         Assert.assertEquals(expected, actual, 0.0);
     }
 
