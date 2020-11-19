@@ -1,7 +1,7 @@
 package com.codedifferently.tdd.calculator.calculator.display;
 
 public class DisplayImplementation implements Display{
-    private DisplayMode displayMode;
+    public DisplayMode displayMode;
 
     public DisplayImplementation(){
         this.displayMode = DisplayMode.DECIMAL;
@@ -19,8 +19,7 @@ public class DisplayImplementation implements Display{
 
     @Override
     public String getCurrentDisplayMode() {
-
-        return null;
+        return displayMode.toString();
     }
 }
 

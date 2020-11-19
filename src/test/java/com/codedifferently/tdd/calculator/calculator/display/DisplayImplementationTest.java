@@ -1,17 +1,21 @@
 package com.codedifferently.tdd.calculator.calculator.display;
-
 import com.codedifferently.tdd.calculator.calculator.basic.BasicCalculatorImp;
 import com.codedifferently.tdd.calculator.calculator.basic.Calculator;
-import junit.framework.TestCase;
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 public class DisplayImplementationTest {
 
-    Calculator calculator = new BasicCalculatorImp();
+
+
+
     //todo:
     // Test 1: Get returned the value of the next enum item
 
     // Given
-    // * BINARY is the current DisplayMode
+    // * DECIMAL is the current DisplayMode
 
     // When
     // * we call the method "switchDisplayMode()"
@@ -23,7 +27,7 @@ public class DisplayImplementationTest {
     // Test 2: Change the DisplayMode to the next item in the enum array
 
     // Given
-    // * BINARY is the current DisplayMode
+    // * DECIMAL is the current DisplayMode
 
     // When
     // * we call the method "switchDisplayMode()"
@@ -36,15 +40,22 @@ public class DisplayImplementationTest {
     // `switchDisplayMode(String mode)` should set the display to the mode given
 
     //todo implement test return the current display mode
+    @Test
+    public void testGetCurrentDisplayMode() {
+        // Given
+        //String expected = "DECIMAL";
+        Calculator calculator = new BasicCalculatorImp();
+        DisplayMode expected = DisplayMode.DECIMAL;
+        // When
+        // * we call the method
+        String actual = DisplayImplementation.getCurrentDisplayMode();
 
-    // Given
-    // * BINARY is the current DisplayMode
+        // Then
+        // * we should get back the display mode DECIMAL
+        Assert.assertEquals(expected, actual);
 
-    // When
-    // * we call the method
 
-    // Then
-    // * we should get back the display mode BINARY
+    }
 
 
 
