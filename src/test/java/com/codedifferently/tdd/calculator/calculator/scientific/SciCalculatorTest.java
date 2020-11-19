@@ -6,10 +6,10 @@ import org.junit.Test;
 
 public class SciCalculatorTest extends TestCase {
     SciCalculator sciCalc = new SciCalculator();
-    Double input = 30.0;
+    Double input = 1.0;
 
     @Test
-    public void testTrigonometry1() {
+    public void testSine() {
 
         //Given
         //expected = 0.5
@@ -23,7 +23,7 @@ public class SciCalculatorTest extends TestCase {
     }
 
     @Test
-    public void testTrigonometry2() {
+    public void testCosine() {
 
         //Given
         //expected = 0.8660254038
@@ -38,7 +38,7 @@ public class SciCalculatorTest extends TestCase {
 
 
     @Test
-    public void testTrigonometry3() {
+    public void testTangent() {
 
         //Given
         //expected = 0.8660254038
