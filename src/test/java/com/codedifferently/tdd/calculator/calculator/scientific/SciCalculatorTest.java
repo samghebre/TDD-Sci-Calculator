@@ -1,22 +1,24 @@
 package com.codedifferently.tdd.calculator.calculator.scientific;
 
+
 import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class SciCalculatorTest extends TestCase {
-    SciCalculator sciCalc = new SciCalculator();
-    Double input = 1.0;
+    SciCalculator sciCalculator = new SciCalculator();
+    Double input = 30.0;
 
     @Test
-    public void testSine() {
-
+    public void testSineDeg() {
+        SciCalculator sciCalculator = new SciCalculator();
+        Double input = 30.0;
         //Given
-        //expected = 0.5
-        Double expected = Math.sin(input);
+        //expected =
+        Double expected = -0.9890316241;
 
         //When
-        Double actual = sciCalc.sine();
+        Double actual = sciCalculator.sine();
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -24,13 +26,14 @@ public class SciCalculatorTest extends TestCase {
 
     @Test
     public void testCosine() {
-
+        SciCalculator sciCalculator = new SciCalculator();
+        Double input = 30.0;
         //Given
         //expected = 0.8660254038
-        Double expected = Math.cos(input);
+        Double expected = 0.1542514499;
 
         //When
-        Double actual = sciCalc.cosine();
+        Double actual = sciCalculator.cosine(input);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -45,7 +48,7 @@ public class SciCalculatorTest extends TestCase {
         Double expected = Math.tan(input);
 
         //When
-        Double actual = sciCalc.tangent();
+        Double actual = sciCalculator.tangent(input);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -71,7 +74,7 @@ public class SciCalculatorTest extends TestCase {
         Double expected = 1 / input;
 
         //When
-        Double actual = sciCalc.inverse(input);
+        Double actual = sciCalculator.inverse(input);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -84,7 +87,7 @@ public class SciCalculatorTest extends TestCase {
         Double expected = 1 / Math.sin(input);
 
         //When
-        Double actual = sciCalc.inverseSine();
+        Double actual = sciCalculator.inverseSine(input);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -97,7 +100,7 @@ public class SciCalculatorTest extends TestCase {
         Double expected = 1 / Math.cos(input);
 
         //When
-        Double actual = sciCalc.inverseCosine();
+        Double actual = sciCalculator.inverseCosine();
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -110,7 +113,7 @@ public class SciCalculatorTest extends TestCase {
         Double expected = 1 / Math.tan(input);
 
         //When
-        Double actual = sciCalc.inverseTangent(input);
+        Double actual = sciCalculator.inverseTangent(input);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -123,7 +126,7 @@ public class SciCalculatorTest extends TestCase {
         Double expected = Math.log(input);
 
         //When
-        Double actual = sciCalc.log(input);
+        Double actual = sciCalculator.log(input);
 
         //Then
         Assert.assertEquals(expected, actual);

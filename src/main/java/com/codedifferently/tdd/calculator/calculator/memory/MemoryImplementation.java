@@ -1,7 +1,5 @@
 package com.codedifferently.tdd.calculator.calculator.memory;
-
 public class MemoryImplementation implements Memory{
-
     private Double currentValue;
     public MemoryImplementation(){
         this.currentValue = 0.0;

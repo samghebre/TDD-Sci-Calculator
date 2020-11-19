@@ -1,6 +1,8 @@
 package com.codedifferently.tdd.calculator.calculator.scientific;
 
 import com.codedifferently.tdd.calculator.calculator.basic.BasicCalculatorImp;
+import com.codedifferently.tdd.calculator.calculator.display.DisplayMode;
+
 
 import static java.lang.Math.*;
 
@@ -17,26 +19,27 @@ public class SciCalculator extends BasicCalculatorImp {
      */
 
     protected Double sine(){
+        Double degCurrentValue = memory.recallCurrentValue();
+        //Boolean displayMode = DisplayMode.BINARY();
+        degCurrentValue = sin(degCurrentValue);
+        return degCurrentValue;
+    }
+    protected Double cosine(Double input){
+        Double degCurrentValue = memory.recallCurrentValue();
+        degCurrentValue = cos(input);
+        return degCurrentValue;
+    }
+    protected Double tangent(Double input){
         Double currentValue = memory.recallCurrentValue();
-        currentValue = sin(currentValue);
-       /* if (input == 0) {
+        currentValue = tan(input);
+        return currentValue;
+    }
+    protected Double inverseSine(Double input){
+        Double currentValue = memory.recallCurrentValue();
+        if (input == 0) {
             throw new IllegalArgumentException("Argument divisor is 0");
-        }*/
-        return currentValue;
-    }
-    protected Double cosine(){
-        Double currentValue = memory.recallCurrentValue();
-        currentValue = cos(currentValue);
-        return currentValue;
-    }
-    protected Double tangent(){
-        Double currentValue = memory.recallCurrentValue();
-        currentValue = tan(currentValue);
-        return currentValue;
-    }
-    protected Double inverseSine(){
-        Double currentValue = memory.recallCurrentValue();
-        currentValue = inverseSine();
+        }
+        currentValue = inverseSine(input);
 
         return currentValue;
     }
