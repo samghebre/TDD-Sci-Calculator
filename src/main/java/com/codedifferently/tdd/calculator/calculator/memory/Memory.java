@@ -1,7 +1,7 @@
 package com.codedifferently.tdd.calculator.calculator.memory;
 
 public interface Memory {
-    void addToCurrentValue(Double input);
+    void setToCurrentValue(Double input);
     void resetMemory();
     Double recallCurrentValue();
 }

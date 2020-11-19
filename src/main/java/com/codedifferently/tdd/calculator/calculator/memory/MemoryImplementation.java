@@ -8,7 +8,7 @@ public class MemoryImplementation implements Memory{
     }
 
     @Override
-    public void addToCurrentValue(Double input) {
+    public void setToCurrentValue(Double input) {
 
     }
 

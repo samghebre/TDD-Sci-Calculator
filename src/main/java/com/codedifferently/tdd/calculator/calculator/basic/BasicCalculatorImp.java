@@ -14,13 +14,15 @@ public class BasicCalculatorImp implements Calculator{
 
     public void run(){
         String message = "";
-        println("Welcome to TDD Calculator");
+        System.out.println("Welcome to TDD Calculator");
         message = String.format("The current Value is %d", memory.recallCurrentValue());
-        println(message);
+        System.out.println(message);
     }
 
     protected Double add(Double input){
-        return 0.0;
+        Double sum = input + memory.recallCurrentValue();
+        memory.setToCurrentValue(sum);
+        return sum;
     }
 
     protected Double subtract(Double input){
