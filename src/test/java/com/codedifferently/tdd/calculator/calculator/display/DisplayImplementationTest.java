@@ -33,11 +33,19 @@ public class DisplayImplementationTest {
     // Then
     // We should
 
-    //todo - implement test showing mode passed,
-    // and result accurate
     // `switchDisplayMode(String mode)` should set the display to the mode given
+    @Test
+    public void testSwitchDisplayModeByInput() {
+        // Given
+        Display display = new DisplayImplementation();
+        DisplayMode expected = DisplayMode.HEXADECIMAL;
+        // When
+        DisplayMode actual = display.switchDisplayMode("HEXADECIMAL");
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
 
-    //todo implement test return the current display mode
+
     @Test
     public void testGetCurrentDisplayMode() {
         // Given
