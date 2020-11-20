@@ -19,8 +19,7 @@ public class DisplayImplementation implements Display{
     public DisplayMode switchDisplayMode(String mode) {
         this.displayMode = DisplayMode.valueOf(mode);
         return this.displayMode;
-        // take passed in string and check if it matches an item from the enum array.
-        // set display mode to entered string using a switch case.
+        //todo input validation restraining to valid options
         // Factor for text casing by ignoring case
     }
 
