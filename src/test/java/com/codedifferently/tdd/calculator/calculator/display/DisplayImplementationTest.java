@@ -7,17 +7,19 @@ import org.junit.Test;
 public class DisplayImplementationTest {
 
 
-    //todo:
-    // Test : Change the DisplayMode to the next item in the enum array
+    @Test
+    public void testSwitchDisplayModeCycle() {
+        // Given
+        Display display = new DisplayImplementation();
+        DisplayMode expected = DisplayMode.HEXADECIMAL;
 
-    // Given
-    // * DECIMAL is the current DisplayMode
+        // When
+        DisplayMode actual = display.switchDisplayMode();
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
 
-    // When
-    // * we call the method "switchDisplayMode()"
 
-    // Then
-    // We should
 
 
     @Test
