@@ -17,10 +17,9 @@ public class DisplayImplementation implements Display{
 
     @Override
     public DisplayMode switchDisplayMode(String mode) {
-        this.displayMode = DisplayMode.valueOf(mode);
+        this.displayMode = DisplayMode.valueOf(mode.toUpperCase());
         return this.displayMode;
         //todo input validation restraining to valid options
-        // Factor for text casing by ignoring case
     }
 
     @Override
