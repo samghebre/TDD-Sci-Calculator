@@ -5,6 +5,7 @@ public class DisplayImplementation implements Display{
 
     public DisplayImplementation(){
         this.displayMode = DisplayMode.DECIMAL;
+
     }
 
     @Override
@@ -18,8 +19,8 @@ public class DisplayImplementation implements Display{
     }
 
     @Override
-    public String getCurrentDisplayMode() {
-        return displayMode.toString();
+    public DisplayMode getCurrentDisplayMode() {
+        return this.displayMode;
     }
 }
 

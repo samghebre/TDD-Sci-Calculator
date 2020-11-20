@@ -9,8 +9,6 @@ import org.junit.Test;
 public class DisplayImplementationTest {
 
 
-
-
     //todo:
     // Test 1: Get returned the value of the next enum item
 
@@ -43,17 +41,14 @@ public class DisplayImplementationTest {
     @Test
     public void testGetCurrentDisplayMode() {
         // Given
-        //String expected = "DECIMAL";
-        Calculator calculator = new BasicCalculatorImp();
+        Display display = new DisplayImplementation();
         DisplayMode expected = DisplayMode.DECIMAL;
+
         // When
-        // * we call the method
-        String actual = DisplayImplementation.getCurrentDisplayMode();
+        DisplayMode actual = display.getCurrentDisplayMode();
 
         // Then
-        // * we should get back the display mode DECIMAL
         Assert.assertEquals(expected, actual);
-
 
     }
 
