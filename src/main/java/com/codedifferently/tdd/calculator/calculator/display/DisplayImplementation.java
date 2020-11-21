@@ -19,7 +19,7 @@ public class DisplayImplementation implements Display{
 
         String valueString = Arrays.toString(DisplayMode.values());
         String[] options = valueString.split(" ");
-        String newMode  = options[newDisplayOrdinal].replaceAll("]", "").trim();
+        String newMode  = options[newDisplayOrdinal].replaceAll("[^A-Z]", "").trim();
         return this.displayMode = DisplayMode.valueOf(newMode);
     }
 
