@@ -7,7 +7,6 @@ public class DisplayImplementation implements Display{
 
     public DisplayImplementation(){
         this.displayMode = DisplayMode.DECIMAL;
-
     }
 
     @Override

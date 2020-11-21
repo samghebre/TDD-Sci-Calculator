@@ -1,11 +1,9 @@
 package com.codedifferently.tdd.calculator.calculator.display;
-// import org.junit.Before;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 public class DisplayImplementationTest {
-
 
     @Test
     public void testSwitchDisplayModeCycle() {
@@ -19,9 +17,6 @@ public class DisplayImplementationTest {
         Assert.assertEquals(expected, actual);
     }
 
-
-
-
     @Test
     public void testSwitchDisplayModeByInput() {
         // Given
@@ -33,7 +28,6 @@ public class DisplayImplementationTest {
         Assert.assertEquals(expected, actual);
     }
 
-
     @Test
     public void testGetCurrentDisplayMode() {
         // Given
@@ -43,9 +37,5 @@ public class DisplayImplementationTest {
         DisplayMode actual = display.getCurrentDisplayMode();
         // Then
         Assert.assertEquals(expected, actual);
-
     }
-
-
-
 }
