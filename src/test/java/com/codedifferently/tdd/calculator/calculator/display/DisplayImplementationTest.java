@@ -9,7 +9,7 @@ public class DisplayImplementationTest {
 
     @Test
     public void testSwitchDisplayModeCycle() {
-        // Given
+         // Given
         Display display = new DisplayImplementation();
         DisplayMode expected = DisplayMode.HEXADECIMAL;
 

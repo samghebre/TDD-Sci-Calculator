@@ -1,5 +1,8 @@
 package com.codedifferently.tdd.calculator.calculator.display;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class DisplayImplementation implements Display{
     public DisplayMode displayMode;
 
@@ -11,23 +14,14 @@ public class DisplayImplementation implements Display{
     @Override
     public DisplayMode switchDisplayMode() {
         int newDisplayOrdinal;
-        this.displayMode = getCurrentDisplayMode();
-        if (this.displayMode.ordinal() == DisplayMode.values().length-1) {
+        if (getCurrentDisplayMode().ordinal() == DisplayMode.values().length-1) {
             newDisplayOrdinal = 0;
-        } else newDisplayOrdinal = this.displayMode.ordinal()+1;
-
-
-
-
-
-
-
-        System.out.printf(" New Display Mode Ordinal Location: %s  ", newDisplayOrdinal);
+        } else newDisplayOrdinal = getCurrentDisplayMode().ordinal()+1;
+        String valueString = Arrays.toString(DisplayMode.values());
+        String[] options = valueString.split(" ");
+        String newMode  = options[newDisplayOrdinal].replaceAll("]", "").trim();
+        this.displayMode = DisplayMode.valueOf(newMode);
         return this.displayMode;
-
-        // use enum array to cycle through
-        // display mode options in sequence
-        // account for eol by resetting to first item
     }
 
     @Override
