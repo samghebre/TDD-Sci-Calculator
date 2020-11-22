@@ -105,7 +105,9 @@ public class SciCalculator extends BasicCalculatorImp {
 
 
     protected Double switchSign(Double input){
-        return null;
+        Double numToSwitch = input;
+        numToSwitch *= -1;
+        return numToSwitch;
     }
 
 

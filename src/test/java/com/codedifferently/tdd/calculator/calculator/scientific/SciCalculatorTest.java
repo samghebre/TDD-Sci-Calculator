@@ -160,7 +160,7 @@ public class SciCalculatorTest {
     @Test
     public void naturalLogTest() {
         //Given 10
-        //expeected euler^2
+        //expected log(10) or can also be written as ln(10)
         Double input = 10.0;
         Double expected = 2.302585092994046;
         //When
@@ -173,7 +173,7 @@ public class SciCalculatorTest {
     public void inverseNaturalLog() {
 
     //Given 10
-    //expeected euler^2
+    //expected euler^2
     Double input = 2.0;
     Double expected = 7.38905609893065;
     //When
@@ -181,7 +181,18 @@ public class SciCalculatorTest {
     //Then
         Assert.assertEquals(expected, actual);
 
-}
+    }
+
+    @Test
+    public void switchSign() {
+        //Given
+        Double input = 5.0;
+        Double expected = -5.0;
+        //When
+        Double actual = sciCalculator.switchSign(input);
+        //Then
+        Assert.assertEquals(expected,actual);
+    }
 
 }
 
