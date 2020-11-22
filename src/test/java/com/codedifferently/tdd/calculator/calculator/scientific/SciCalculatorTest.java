@@ -6,36 +6,29 @@ import org.junit.Test;
 
 public class SciCalculatorTest {
     SciCalculator sciCalculator = new SciCalculator();
-    Double input = 30.0;
+    Double input = 0.0;
 
     @Test
-    public void testSineDeg() {
-        SciCalculator sciCalculator = new SciCalculator();
-        sciCalculator.memory.setCurrentValue(input);
-        Double input = 30.0;
+    public void sineTest() {
         //Given
-        //expected =
-        Double expected = -0.9890316241;
-
+        SciCalculator sciCalculator = new SciCalculator();
+        Double input = 30.0;
+        Double expected = -0.9880316240928618;
         //When
         Double actual = sciCalculator.sine(input);
-
         //Then
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void testCosine() {
+    public void cosineTest() {
         SciCalculator sciCalculator = new SciCalculator();
         sciCalculator.memory.setCurrentValue(input);
         input = 30.0;
         //Given
-        //expected = 0.8660254038
-        Double expected = 0.1542514499;
-
+        Double expected = 0.15425144988758405;
         //When
-        Double actual = sciCalculator.cosine();
-
+        Double actual = sciCalculator.cosine(input);
         //Then
         Assert.assertEquals(expected, actual);
     }
@@ -49,38 +42,19 @@ public class SciCalculatorTest {
         //Given
         //expected = 0.8660254038
         Double expected = Math.tan(input);
-
         //When
-        Double actual = sciCalculator.tangent();
-
+        Double actual = sciCalculator.tangent(input);
         //Then
         Assert.assertEquals(expected, actual);
     }
 
-   /* @Test
-    public void testRadianDegrees() {
-        SciCalculator sciCalculator = new SciCalculator();
-        sciCalculator.memory.setCurrentValue(input);
-        //Given
-        //expected
-        Double expected = Math.toRadians(input);
-
-        //When
-        //Double actual = sciCalculator.toRadians();
-
-        //Then
-        //Assert.assertEquals(expected, actual);
-    } */
-
-    @Test
-    public void testInverse() {
+     @Test
+    public void inverseTest() {
         //Given 5
         //expected 1/5
         Double expected = 1 / input;
-
         //When
         Double actual = sciCalculator.inverse(input);
-
         //Then
         Assert.assertEquals(expected, actual);
     }
@@ -88,26 +62,23 @@ public class SciCalculatorTest {
     @Test
     public void inverseSineTest() {
         //Given
-        //expected 1/sin
-        Double input = 30.0;
-        Double expected = 1/input;
-
+        //expected arcsin(1)
+        Double input = 1.0;
+        Double expected = 1.5707963267948966;
         //When
         Double actual = sciCalculator.inverseSine(input);
-
         //Then
         Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void testInverseCos() {
-        //Given 5
-        //expected 1/sin
-        Double expected = 1 / Math.cos(input);
-
+        //Given
+        //expected
+        Double input = 1.0;
+        Double expected = 0.0;
         //When
         Double actual = sciCalculator.inverseCosine(input);
-
         //Then
         Assert.assertEquals(expected, actual);
     }
@@ -116,11 +87,10 @@ public class SciCalculatorTest {
     public void testInverseTan() {
         //Given 5
         //expected 1/sin
-        Double expected = 1 / Math.tan(input);
-
+        Double input = 90.0;
+        Double expected = 1.5596856728972892;
         //When
         Double actual = sciCalculator.inverseTangent(input);
-
         //Then
         Assert.assertEquals(expected, actual);
     }
@@ -129,11 +99,10 @@ public class SciCalculatorTest {
     public void log() {
         //Given 10
         //expected 1
-        Double expected = Math.log(input);
-
+        Double input = 10.0;
+        Double expected = 1.0;
         //When
         Double actual = sciCalculator.log(input);
-
         //Then
         Assert.assertEquals(expected, actual);
     }
@@ -142,52 +111,77 @@ public class SciCalculatorTest {
     public void factorial() {
         //Given 5
         //expected 120
-        double input = 5.0;
-
+        Double input = 5.0;
         Double expected = input * (input-1) * (input-2) * (input-3) * (input-4);
-
         //When
         Double actual = sciCalculator.factorial(input);
-
         //Then
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void radToDegrees() {
+    public void radToDegreesTest() {
         //Given
-        double radians = input;
+        Double radians = input;
         input = 1.0;
-        double PI = 3.14;
+        Double PI = 3.141592653589793238462643383279502884197169399375105820974944592307816406286;
         Double expected = input * 180/PI;
-
         //When
-        Double actual = sciCalculator.radToDegrees();
-
+        Double actual = sciCalculator.radToDegrees(input);
         //Then
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void degToRadians() {
+    public void degToRadiansTest() {
         //Given
-        double radians = input;
-        input = 1.0;
-        double PI = 3.14;
-        Double expected = input * PI/180;
-
+        Double degrees = input;
+        input = 90.0;
+        Double PI = 3.141592653589793238462643383279502884197169399375105820974944592307816406286;
+        Double expected = (PI)/2;
         //When
-        Double actual = sciCalculator.radToDegrees();
-
+        Double actual = sciCalculator.degToRad(input);
         //Then
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void inverseLog() {
+    public void inverseLogTest() {
         //Given
+        Double input = 10.0;
+        Double expected = 100.0;
+        //When
+        Double actual = sciCalculator.inverseLog(input);
+        //Then
+        Assert.assertEquals(expected, actual);
 
     }
+
+    @Test
+    public void naturalLogTest() {
+        //Given 10
+        //expeected euler^2
+        Double input = 10.0;
+        Double expected = 2.302585092994046;
+        //When
+        Double actual = sciCalculator.naturalLog(input);
+        //Then
+        Assert.assertEquals(expected, actual);
+
+    }
+    @Test
+    public void inverseNaturalLog() {
+
+    //Given 10
+    //expeected euler^2
+    Double input = 2.0;
+    Double expected = 7.38905609893065;
+    //When
+    Double actual = sciCalculator.inverseNaturalLog(input);
+    //Then
+        Assert.assertEquals(expected, actual);
+
+}
 
 }
 
