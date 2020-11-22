@@ -68,11 +68,6 @@ public class SciCalculator extends BasicCalculatorImp {
     }
 
 
-    protected String switchUnitsMode(String input){
-        return null;
-    }
-
-
     protected Double log(Double input){
         Double logValue = Math.log10(input);
         return logValue;
