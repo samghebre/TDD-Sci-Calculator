@@ -13,11 +13,11 @@ public class SciCalculatorTest {
         //Given
         SciCalculator sciCalculator = new SciCalculator();
         Double input = 30.0;
-        Double expected = -0.9880316240928618;
+        Double expected = -0.9880316241;
         //When
         Double actual = sciCalculator.sine(input);
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0.001);
     }
 
     @Test
@@ -26,11 +26,11 @@ public class SciCalculatorTest {
         sciCalculator.memory.setCurrentValue(input);
         input = 30.0;
         //Given
-        Double expected = 0.15425144988758405;
+        Double expected = 0.1542514499;
         //When
         Double actual = sciCalculator.cosine(input);
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0.001);
     }
 
 
@@ -41,11 +41,11 @@ public class SciCalculatorTest {
         input = 30.0;
         //Given
         //expected = 0.8660254038
-        Double expected = Math.tan(input);
+        Double expected = -6.4053311966;
         //When
         Double actual = sciCalculator.tangent(input);
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0.001);
     }
 
      @Test
@@ -64,11 +64,11 @@ public class SciCalculatorTest {
         //Given
         //expected arcsin(1)
         Double input = 1.0;
-        Double expected = 1.5707963267948966;
+        Double expected = 1.5707963268;
         //When
         Double actual = sciCalculator.inverseSine(input);
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0.001);
     }
 
     @Test
@@ -88,11 +88,11 @@ public class SciCalculatorTest {
         //Given 5
         //expected 1/sin
         Double input = 90.0;
-        Double expected = 1.5596856728972892;
+        Double expected = 1.5596856729;
         //When
         Double actual = sciCalculator.inverseTangent(input);
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0.001);
     }
 
     @Test
@@ -122,27 +122,24 @@ public class SciCalculatorTest {
     @Test
     public void radToDegreesTest() {
         //Given
-        Double radians = input;
         input = 1.0;
-        Double PI = 3.141592653589793238462643383279502884197169399375105820974944592307816406286;
-        Double expected = input * 180/PI;
+        Double expected = 57.295;
         //When
         Double actual = sciCalculator.radToDegrees(input);
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0.001);
     }
 
     @Test
     public void degToRadiansTest() {
         //Given
-        Double degrees = input;
         input = 90.0;
-        Double PI = 3.141592653589793238462643383279502884197169399375105820974944592307816406286;
+        Double PI = 3.14;
         Double expected = (PI)/2;
         //When
         Double actual = sciCalculator.degToRad(input);
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0.001);
     }
 
     @Test
@@ -162,11 +159,11 @@ public class SciCalculatorTest {
         //Given 10
         //expected log(10) or can also be written as ln(10)
         Double input = 10.0;
-        Double expected = 2.302585092994046;
+        Double expected = 2.302585093;
         //When
         Double actual = sciCalculator.naturalLog(input);
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0.001);
 
     }
     @Test
@@ -175,11 +172,11 @@ public class SciCalculatorTest {
     //Given 10
     //expected euler^2
     Double input = 2.0;
-    Double expected = 7.38905609893065;
+    Double expected = 7.3890560989;
     //When
     Double actual = sciCalculator.inverseNaturalLog(input);
     //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0.001);
 
     }
 
