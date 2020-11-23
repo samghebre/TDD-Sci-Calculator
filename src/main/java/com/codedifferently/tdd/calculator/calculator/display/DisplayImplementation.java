@@ -13,9 +13,8 @@ public class DisplayImplementation implements Display{
     public DisplayMode switchDisplayMode() {
         int newDisplayOrdinal;
         if (getCurrentDisplayMode().ordinal() == DisplayMode.values().length-1)
-            { newDisplayOrdinal = 0;
-            } else newDisplayOrdinal = getCurrentDisplayMode().ordinal()+1;
-
+            { newDisplayOrdinal = 0; }
+            else newDisplayOrdinal = getCurrentDisplayMode().ordinal()+1;
         String valueString = Arrays.toString(DisplayMode.values());
         String[] options = valueString.split(" ");
         String newMode  = options[newDisplayOrdinal].replaceAll("[^A-Z]", "").trim();
