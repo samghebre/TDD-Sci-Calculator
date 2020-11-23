@@ -11,7 +11,6 @@ public class SciCalculator extends BasicCalculatorImp {
 
 
     public Memory memory;
-    //private Double input;
 
     public SciCalculator(){
         super();
